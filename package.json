@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-rest-api---express-npm",
+  "version": "1.0.0",
+  "description": "NodeJS REST API: Super Simple Setup - Express &amp; NPM",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmonzon/NodeJS-REST-API---Express-NPM.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nmonzon/NodeJS-REST-API---Express-NPM/issues"
+  },
+  "homepage": "https://github.com/nmonzon/NodeJS-REST-API---Express-NPM#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  }
+}

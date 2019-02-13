@@ -1,0 +1,15 @@
+/*
+npm init crea el package json
+
+npm i -g nodemon (para no tener que andar volviendo a darle node app.js)
+luego solo haces nodemon app.js
+
+morgan(npm i morgan)
+app.use(morgan('short')) devuelve ::1 - GET /users HTTP/1.1 304 - - 4.204 ms
+app.use(morgan('combined')) devuelve ::1 - - [13/Feb/2019:03:01:11 +0000] "GET /users HTTP/1.1" 304 - "-" "Mozilla
+/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chr
+ome/71.0.3578.98 Safari/537.36"
+
+
+
+*/
