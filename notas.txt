@@ -1,0 +1,16 @@
+Video 1.
+
+Para iniciar la aplicación en la consola tipear: node app.js
+
+Cada cambio no olvidarse de reiniciar la aplicación.
+
+Con nodemon no vamos a necesitar reiniciar la aplicación por cada cambio.
+
+npm i -g .... //i: install, -g:global
+
+para correr la app ahora usamos: nodemon app.js
+
+morgan para loguear los servicios que se usaron.
+
+morgan('short'): descripción corta del log.
+morgan('combined'): descripción mas completa del log.
