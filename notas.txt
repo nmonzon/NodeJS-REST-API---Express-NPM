@@ -14,3 +14,9 @@ morgan para loguear los servicios que se usaron.
 
 morgan('short'): descripción corta del log.
 morgan('combined'): descripción mas completa del log.
+
+
+Video 3.
+
+Middleware to help u to get data.
+app.use(bodyParser.urlencoded({extended: false}));
