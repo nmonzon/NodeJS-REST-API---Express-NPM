@@ -2,14 +2,11 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
-const mysql = require('mysql');
 const bodyParser = require('body-parser');
+const users = require('./controller/userController.js');
 
 app.use(bodyParser.urlencoded({extended: false}));
-
-
 app.use(express.static('./public'));
-
 app.use(morgan('short'));
 //app.use(morgan('combined'));
 
@@ -18,9 +15,7 @@ app.get("/", (req, res) => {
 	res.send("Hello from ROOOT");
 });
 
-const router = require('./routes/user.js');
-
-app.use(router);
+app.use(users);
 
 const PORT = process.env.PORT || 3003
 // localhost:PORT

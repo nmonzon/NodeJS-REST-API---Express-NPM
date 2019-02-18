@@ -20,3 +20,9 @@ Video 3.
 
 Middleware to help u to get data.
 app.use(bodyParser.urlencoded({extended: false}));
+
+Video 5.
+Para deployar una app en heroku y tu rama de git no es master ejecutar.
+
+git push heroku x:master
+x = rama distinta de "master" del repositorio de git

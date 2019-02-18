@@ -1,15 +1,31 @@
 //It will contain all of my user related routes.
-
 const express = require('express');
-const mysql = require('mysql');
+const users = express.Router();
+const User = require('../models/user');
+const mongoose = require('mongoose');
+const userRepository = require('../repository/userRepository');
 
-const router = express.Router();
-router.get('/messages', (req, res) => {
-	console.log("Show some messages ...");
+
+
+users.get('/test', (req, res) => {
+	let a = userRepository.getAll;
+	console.log(a);
+	/*let user = new User({
+		_id: new mongoose.Types.ObjectId(),
+		first_name : 'Sandro',
+		last_name : 'Dezerio',
+		address: {
+			_id: mongoose.Schema.Types.ObjectId,
+			street: "Serrano",
+			number: 814,
+			zipCode: 1704
+		}
+	});
+	res.json(user);*/
 	res.end();
 });
 
-router.get("/users", (req, res) => {
+users.get("/users", (req, res) => {
 	const connection = getConnection();
 	const queryString = "SELECT * FROM users";
 	connection.query(queryString, (err, rows, fields)=>{
@@ -25,7 +41,7 @@ router.get("/users", (req, res) => {
 	});
 });
 
-router.get("/user/:id", (req, res) => {
+users.get("/user/:id", (req, res) => {
 	console.log("Fetching user with id: "+req.params.id);
 	const connection = getConnection();
 
@@ -46,19 +62,7 @@ router.get("/user/:id", (req, res) => {
 	//res.end();
 });
 
-const pool = mysql.createPool({
-	connectionLimit: 10,
-	host: 'localhost',
-	user: 'root',
-	password: 's4ndr0i99i',
-	database: 'lbta_mysql'
-})
-
-function getConnection(){
-	return pool;
-}
-
-router.post('/user_create', (req, res)=>{
+users.post('/user_create', (req, res)=>{
 	const firstName = req.body.create_first_name;
 	const lastName = req.body.create_last_name;
 
@@ -75,4 +79,19 @@ router.post('/user_create', (req, res)=>{
 	});
 });
 
-module.exports = router;
+getData = (req) => {
+	let user = new User({
+		_id: new mongoose.Types.ObjectId(),
+		first_name : req.body.first_name,
+		last_name : req.body.last_name,
+		address: {
+			_id: mongoose.Schema.Types.ObjectId(),
+			street: req.body.street,
+			number: req.body.number,
+			zipCode: req.body.zipCode
+		}
+	});
+	return user;
+}
+
+module.exports = users;
