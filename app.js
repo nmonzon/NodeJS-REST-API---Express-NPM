@@ -4,6 +4,13 @@ const app = express()
 const morgan = require('morgan')
 const mysql = require('mysql')
 
+/*router.get('/messages', (req,res) => {
+  console.log("show message")
+  res.end() 
+})*/
+const router = require('./routes/user.js')
+
+app.use(router)
 
 //pasar info de una pantalla a otra
 const bodyParser = require('body-parser')
@@ -92,6 +99,6 @@ app.get("/",(req, res) => {
 })
 
 //localhost:3003
-app.listen(3004, () => {
+app.listen(3003, () => {
   console.log("Server is up and listening on 3003...")
 })
