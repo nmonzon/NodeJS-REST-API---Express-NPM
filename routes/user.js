@@ -9,6 +9,7 @@ router.get('/messages', (req, res) => {
   res.end()
 })
 
+
 router.get("/users", (req, res) => {
     const connection = getConnection()
     const queryString = "SELECT * FROM users"
@@ -22,7 +23,7 @@ router.get("/users", (req, res) => {
     })
   })
 
-  
+
 
 const pool = mysql.createPool({
     connectionLimit: 10,

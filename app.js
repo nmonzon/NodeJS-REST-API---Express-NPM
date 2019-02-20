@@ -4,20 +4,20 @@ const app = express()
 const morgan = require('morgan')
 const mysql = require('mysql')
 
+/*router.get('/messages', (req,res) => {
+  console.log("show message")
+  res.end() 
+})*/
+
+const router = require('./routes/user.js')
+
+app.use(router)
+
 //pasar info de una pantalla a otra
 const bodyParser = require('body-parser')
 
 //busca una request por mi.
 app.use(bodyParser.urlencoded({extended: false}))
-/*router.get('/messages', (req,res) => {
-  console.log("show message")
-  res.end() 
-})*/
-const router = require('./routes/user.js')
-
-app.use(router)
-
-
 
 app.use(express.static('./public'))
 
