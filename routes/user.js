@@ -21,6 +21,7 @@ router.get("/users", (req, res) => {
       res.json(rows)
     })
   })
+
   
 
 const pool = mysql.createPool({
